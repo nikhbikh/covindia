@@ -347,11 +347,13 @@
  */
 .post-header {
   margin-bottom: $spacing-unit;
+  color: rgb(57, 77, 85);
+  text-align: center;
 }
 
 .post-title {
   @include relative-font-size(2.625);
-  letter-spacing: -1px;
+  letter-spacing: normal;
   line-height: 1;
 
   @include media-query($on-laptop) {
@@ -361,6 +363,10 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
+  h1, h2, h3 {
+    color: rgb(57, 77, 85);
+  }
+  color: $grey-color-dark;
 
   h2 {
     @include relative-font-size(2);

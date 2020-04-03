@@ -4,8 +4,6 @@ title: Economic Relief
 permalink: /economic-relief
 ---
 
-# Economic Relief
-
 Below is a list of fundraisers for COVID relief:
 
 ## Citizen-Led
