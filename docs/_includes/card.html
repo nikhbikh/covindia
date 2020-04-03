@@ -1,5 +1,9 @@
 <div class="card">
+  {% if include.url != "" %}
   <a  href="{{ include.url }}">
+  {% else %}
+  <a>
+  {% endif %}
     <div class="label">
       {{ include.label }}
     </div>
