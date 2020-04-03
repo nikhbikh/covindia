@@ -277,15 +277,37 @@
 
 .blue_button {
   background-color: rgb(62, 125, 152);
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
   color: white;
 }
+
+.blue_button:hover {
+  background-color: rgb(47, 95, 116);
+  text-decoration: none;
+  color: white;
+}
+
 
 .clear_button {
   background-color: rgba(0, 0, 0, 0);
   color: white;
   border-color: white;
   border-style: solid;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
+
+.clear_button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  text-decoration:none;
+}
+
 
 /**
  * Site footer
