@@ -370,11 +370,12 @@
 .post-header {
   margin-bottom: $spacing-unit;
   color: rgb(57, 77, 85);
-  text-align: center;
+  text-align: left;
 }
 
 .post-title {
-  @include relative-font-size(2.625);
+  @include relative-font-size(3.625);
+  font-weight: 500;
   letter-spacing: normal;
   line-height: 1;
 

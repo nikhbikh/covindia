@@ -4,9 +4,10 @@ title: Economic Relief
 permalink: /economic-relief
 ---
 
-Below is a list of fundraisers for COVID relief:
+<p style="padding-bottom: 5px;border-bottom: 1px solid #e8e8e8;margin-right:0;">
+Below is a list of fundraisers for COVID relief.
+</p>
 
-## Citizen-Led
 {% include card.html
 name="Give India"
 url="https://indiafightscorona.giveindia.org/support-families/"
