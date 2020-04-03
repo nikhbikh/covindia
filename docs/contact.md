@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contact
-permalink: /Contact
+permalink: /contact
 ---
 
 Email tanvib@stanford.edu
