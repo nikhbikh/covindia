@@ -1,0 +1,18 @@
+- name: Relief
+  subpages:
+  - name: Economic Relief
+    link: "/economic-relief"
+  - name: Medical Relief
+    link: "/medical-relief"
+- name: Resources
+  subpages:
+  - name: Govt Schemes
+    link: "/govt-schemes"
+  - name: Free Education 
+    link: "/free-education"
+  - name: Funding for NGOs
+    link: "/funding-ngos"
+  - name: Corona Awareness
+    link: "/corona-awareness"
+- name: Contact
+  link: "/contact"

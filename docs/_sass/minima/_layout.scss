@@ -43,7 +43,7 @@
 
 .site-nav {
   float: right;
-  line-height: $base-line-height * $base-font-size;
+  line-height: 39px;
 
   .nav-trigger {
       display: none;
@@ -54,14 +54,73 @@
   }
 
   .page-link {
-    color: $text-color;
+    color: rgb(47, 95, 116);
+    font-weight: 700;
     line-height: $base-line-height;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: 25px;
     }
   }
+
+  .page-link:hover {
+    color: rgb(88, 165, 185);
+    text-decoration: none;
+  }
+
+  .nav-dropdown {
+    position: relative;
+    display: inline-block;
+
+    .page-link {
+      margin-right: 0;
+      cursor: pointer;
+    }
+
+    // Gaps between nav items, but not on the last one
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+
+  .nav-dropdown .page-link:after{
+    font-size: 12px;
+    content: "\00a0\25BC";
+    display: inline-block;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(62, 125, 152);
+    text-color: white;
+    z-index: 1;
+    min-width: 160px;
+    text-align: center;
+
+    .page-link {
+      color: white;
+      display: block;
+      margin-right: 0;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .page-link:hover {
+      background-color: rgb(88, 165, 185);
+    }
+
+    .page-link:after {
+      content: "";
+    }
+  }
+
+
+  .nav-dropdown:hover .nav-dropdown-content {
+    display: block;
+  }
+
 
   @include media-query($on-palm) {
     position: absolute;
