@@ -3,12 +3,13 @@
  */
 .site-header {
   min-height: $spacing-unit * 1.865;
+  overflow: visible;
 
   // Positioning context for the mobile navigation icon
   position: relative;
   
-  width: 1006px;
-  max-width: 100%;
+  min-width: 80%;
+  max-width: 1006px;
   margin-right: auto;
   margin-left: auto;
   padding-right: $spacing-unit;
@@ -16,10 +17,21 @@
   padding-top: $spacing-unit;
   padding-bottom: $spacing-unit;
   @extend %clearfix;
+
+  @include media-query($screen-600) {
+    z-index: 1;
+  }
+
 }
 
 .site-title-and-description {
   float: left;
+  max-width: 50%;
+  margin-right: -100px;
+
+  @include media-query($screen-600) {
+    max-width: 70%;
+  }
 }
 
 .site-title {
@@ -95,7 +107,6 @@
     position: absolute;
     background-color: rgb(62, 125, 152);
     text-color: white;
-    z-index: 1;
     min-width: 160px;
     text-align: center;
 
@@ -122,10 +133,11 @@
   }
 
 
-  @include media-query($on-palm) {
+  @include media-query($screen-600) {
+    //margin-right: -$spacing-unit;
     position: absolute;
-    top: 9px;
-    right: $spacing-unit / 2;
+    top: 16px;
+    right: 9px;
     background-color: $background-color;
     border: 1px solid $grey-color-light;
     border-radius: 5px;
@@ -139,6 +151,29 @@
       z-index: 2;
       cursor: pointer;
     }
+
+    .nav-dropdown {
+      display: block;
+    }
+    .nav-dropdown .page-link:after{
+      content: "";
+    }
+
+    .nav-dropdown-content  {
+      display: block;
+      position: static;
+      background-color: white;
+    }
+
+    .nav-dropdown-content .page-link {
+      color: rgb(47, 95, 116);
+    }
+
+    .nav-dropdown-content .page-link:before {
+      content: "  -  ";
+      margin-right: 2px;
+    }
+
 
     .menu-icon {
       display: block;
@@ -167,6 +202,7 @@
     .page-link {
       display: block;
       padding: 5px 10px;
+      text-align: left;
 
       &:not(:last-child) {
         margin-right: 0;
@@ -192,6 +228,10 @@
   align-items: center;
   text-align: center;
   position: relative;
+
+  @include media-query($screen-780) {
+    min-height: 611px;
+  }
 }
 
 .home-inner {
@@ -200,13 +240,26 @@
   padding-top: 128px + $spacing-unit * 2;
   margin-left: auto;
   margin-right: auto;
-  width: 1006px;
+  padding-left: $spacing-unit;
+  padding-right: $spacing-unit;
+  max-width: 1006px;
+
+  @include media-query($screen-1000) {
+    padding-top: 96px + $spacing-unit;
+  }
 }
 
 .home-inner-cols {
   color: #FFF;
-  margin-bottom: 0;
   padding-top: 96px + $spacing-unit * 2;
+  padding-left: $spacing-unit;
+  padding-right: $spacing-unit;
+  padding-bottom: $spacing-unit;
+  text-align: center;
+
+  @include media-query($screen-1000) {
+    padding-top: 48px + $spacing-unit;
+  }
 }
 
 .home-inner h1, .home-inner-cols h1 {
@@ -233,14 +286,65 @@
   @extend %clearfix;
   margin-left: auto;
   margin-right: auto;
-  width: 1006px;
+  max-width: 1006px;
+  display: flex;
+  flex-wrap: nowrap;
+
+  .home-inner-col-item:not(:first-child) {
+    margin-left: $spacing-unit;
+  }
+
+  @include media-query($screen-780) {
+    flex-wrap: wrap;
+    .home-inner-col-item:first-child {
+      margin-bottom: $spacing-unit;
+    }
+
+    .home-inner-col-item:nth-child(2) {
+      margin-left: $spacing-unit;
+      margin-bottom: $spacing-unit;
+    }
+
+    .home-inner-col-item:nth-child(3) {
+      margin-left: 0;
+    }
+  }
+
+  @include media-query($screen-600) {
+    flex-wrap: wrap;
+    .home-inner-col-item:first-child {
+      margin-top: $spacing-unit;
+      margin-bottom: $spacing-unit * 1.5;
+      margin-left: 0;
+    }
+
+    .home-inner-col-item:nth-child(2) {
+      margin-bottom: $spacing-unit * 1.5;
+      margin-left: 0;
+    }
+
+    .home-inner-col-item:nth-child(3) {
+      margin-left: 0;
+    }
+  }
+
 }
 
 .home-inner-col-item {
-  width: calc(33% - (#{$spacing-unit} / 2));
-  max-width:  314px;
-  float: left;
-  padding-left: $spacing-unit / 2;
+  flex-basis: 0;
+  flex-grow: 1;
+
+  @include media-query($screen-780) {
+    flex-basis: calc(50% - (#{$spacing-unit} / 2));
+    flex-grow: 0; 
+  }
+
+  @include media-query($screen-600) {
+    flex-basis: 100%;
+    flex-grow: 1; 
+  }
+
+
 
   h1 {
     font-size: 28.8px;
@@ -259,6 +363,13 @@
  * Buttons
  */
 
+ .buttons {
+    margin-top: $spacing-unit / 2;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+ }
+
 .button {
   font-family: $base-font-family;
   cursor: pointer;
@@ -267,12 +378,23 @@
   line-height: 16.6667px;
   padding: 20px;
   border-radius: 50px;
-  margin: $spacing-unit / 2;
   display: inline-block;
   padding-left: 48px;
   padding-right: 48px;
   padding-top: 16px;
   padding-bottom: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+
+  @include media-query($on-laptop) {
+    font-size: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 }
 
 .blue_button {
@@ -315,7 +437,8 @@
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit / 2 0;
-  width: 1006px;
+  min-width: 80%;
+  max-width: 1006px;
   text-align: right;
   margin-left: auto;
   margin-right: auto;
@@ -333,6 +456,7 @@
  */
 .page-content {
   flex: 1;
+
 }
 
 .page-heading {
