@@ -16,11 +16,9 @@
   padding-left: $spacing-unit;
   padding-top: $spacing-unit;
   padding-bottom: $spacing-unit;
+  z-index: 1;
   @extend %clearfix;
 
-  @include media-query($screen-600) {
-    z-index: 1;
-  }
 
 }
 
