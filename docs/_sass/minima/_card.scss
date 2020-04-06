@@ -3,14 +3,15 @@
  */
 
 .card {
-    width: 600px;
     position: relative;
     margin-bottom: 30px;
+    margin-left: $spacing-unit;
+    margin-right: $spacing-unit;
 
     a {
       background-color: rgb(234, 234, 239);
       display: block;
-      width: 100%;
+      max-width: 600px + $spacing-unit * 2;;
       height: 100%;
       padding-top: $spacing-unit;
       padding-bottom: $spacing-unit;
