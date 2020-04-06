@@ -16,16 +16,15 @@
       </label>
 
       <div class="trigger">
-        <a class="page-link" href="{{ site.baseurl }}">Home</a>
         {% for item in site.data.navbar %}
-          {% if item.link %}
-            <a class="page-link" href="{{ site.baseurl }}{{ item.link }}">{{ item.name | escape }}</a>
+          {% if item.link or item.rel-link %}
+            {% include page_link.html item=item %}
           {% else %}
           <div class="nav-dropdown">
-            <a class="page-link">{{ item.name | escape }}</a>
+            {% include page_link.html item=item %}
             <div class="nav-dropdown-content">
               {% for sub in item.subpages %}
-                <a class="page-link" href="{{ site.baseurl }}{{ sub.link }}">{{ sub.name | escape }}</a>
+                {% include page_link.html item=sub %}
               {% endfor %}
             </div>
           </div>

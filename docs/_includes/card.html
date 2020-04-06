@@ -1,11 +1,16 @@
 <div class="card">
-  {% if include.url != "" %}
+  {% if include.url %}
   <a  href="{{ include.url }}">
   {% else %}
   <a>
   {% endif %}
     <div class="label">
-      {{ include.label }}
+      {% if include.label1 %}
+        <span>{{ include.label1 }}</span>
+        {% if include.label2 %}
+          <span>{{ include.label2 }}</span>
+        {% endif %}
+      {% endif %}
     </div>
     <div class="body">
       <h1>{{ include.name }}</h1>

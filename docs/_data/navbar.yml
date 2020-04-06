@@ -1,18 +1,22 @@
+- name: Home
+  rel-link: ""
 - name: Relief
   subpages:
   - name: Economic Relief
-    link: "/economic-relief"
+    rel-link: "economic-relief"
   - name: Medical Relief
-    link: "/medical-relief"
+    rel-link: "medical-relief"
 - name: Resources
   subpages:
-  - name: Govt Schemes
-    link: "/govt-schemes"
+  - name: Government Initiatives
+    rel-link: "govt-schemes"
   - name: Free Education 
-    link: "/free-education"
+    rel-link: "free-education"
   - name: Funding for NGOs
-    link: "/funding-ngos"
+    rel-link: "funding-ngos"
   - name: Corona Awareness
-    link: "/corona-awareness"
+    rel-link: "corona-awareness"
+  - name: COVID Handbook
+    link: "https://docs.google.com/document/d/1cT69NNAOD98OPCWblmP4XQ_S6VFvCJKDZTTHwN7kZCc/"
 - name: Contact
-  link: "/contact"
+  rel-link: "contact"

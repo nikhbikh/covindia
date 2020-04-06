@@ -1,0 +1,95 @@
+---
+layout: page
+title: Free Education
+permalink: /free-education
+card-groups:
+  - heading: Primary Education
+    cards:
+      - url: "https://www.tiktok.com/@saarthi_smartchampions"
+        label1: Primary
+        label2: Hindi
+        name: Saarthi
+        text: "offering simple worksheets &amp; activities for children via WhatsApp and TikTok. To sign up, send a message on: +91 93197 66226"
+  - heading: Middle and Secondary
+    cards:
+      - url: "https://hi.khanacademy.org/"
+        label1: Secondary
+        label2: English Hindi Bangla
+        name: Khan Academy
+        text: "Free Maths and Science videos aligned to the Indian curriculum"
+      - url: "https://byjus.com/"
+        label1: Secondary
+        label2: English
+        name: Byju's
+        text: "free access to live classes for April 2020"
+  - heading: Graduate / Professional
+    cards:
+      - url: "https://www.classcentral.com/report/new-courses-october-2018/"
+        label1: Grad
+        label2: English
+        name: ClassCentral
+        text: "A collection of 6000 online courses offered across 190 Universities"
+      - url: "https://blog.udacity.com/2020/03/one-month-free-on-nanodegrees.html"
+        label1: Grad
+        label2: English
+        name: Udacity
+        text: "Offering everyone one free month on one of 40 premium Nanodegree programs"
+      - url: "https://www.coursera.org/coronavirus"
+        label1: Grad
+        label2: English
+        name: Coursera
+        text: "offering a range of free online courses"
+      - url: "https://swayam.gov.in/"
+        label1: Grad
+        label2: Multiple
+        name: SWAYAM
+        text: "Free online courses by Govt of India"
+  - heading: Test Prep
+    cards:
+      - url: "https://www.vedantu.com"
+        label1: Test Prep
+        label2: English
+        name: Vedantu
+        text: "free access to live PCMB classes for  JEE &amp; NEET"
+      - url: "https://www.unacademy.com"
+        label1: Test Prep
+        label2: English
+        name: Unacademy
+        text: "free Live Classes will be available across exam categories like UPSC, Bank Exams, Railway Exams among others till May."
+  - heading: Social &amp; Emotional
+    cards:
+      - url: "https://www.youtube.com/channel/UC4B3hjRidi1A8boHh4Y57dA"
+        label1: SEL
+        label2: Hindi Telugu
+        name: Learning Curve Life Skills Foundation
+        text: "Youtube channel with 1 video daily on emotional well-being in Hindi and Telugu"
+      - url: "https://www.youtube.com/channel/UC_4GyNsMBkOEzIEIgQW6dnQ"
+        label1: SEL
+        label2: English
+        name: Imagination Station
+        text: "An online collection of art prompts, fun activities and guest artist features."
+---
+<p style="padding-bottom: 5px;border-bottom: 1px solid #e8e8e8;margin-right:0;">
+Below is a list of resources tagged according to stage and language
+</p>
+
+{% for group in page.card-groups %}
+  {% if group.heading %}
+    {% include card_heading.html heading=group.heading %}
+  {% endif %}
+
+  {% for card in group.cards %}
+    {% include card.html
+     name=card.name
+     url=card.url
+     text=card.text
+     label1=card.label1
+     label2=card.label2
+    %}
+  {% endfor %}
+{% endfor %}
+
+<div style="text-align: center;">
+  <img src="https://lh5.googleusercontent.com/wmefMz7pqVlgbXKUB8G872PhWr7LTq2Pqu_A_XXqbgLDKTIevdVx2sPQeRkDLAp3D6c8L8WW2nDPexxJ3TurUfAS8PtON_IEz-v4WSZNkT5dz256muXJWn_Hk3VSBVoYgmS55tPt"
+       width="350px" height="350px" />
+</div>

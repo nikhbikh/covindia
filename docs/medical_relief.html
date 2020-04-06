@@ -1,0 +1,115 @@
+---
+layout: page
+title: Medical Relief
+card-groups:
+  - heading: DONATE 
+    cards:
+      - url: "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/donate"
+        label1: Donate
+        label2: Global
+        name: COVID-19 Response Fund by WHO  
+        text: "Donate to the WHO’s global efforts against the coronavirus. Proceeds go towards tracking and understanding the virus; accelerating the development of testing and vaccines; ensuring patients get the care they need; purchasing and shipping essential supplies.  "
+
+      - url: "https://covid19.ketto.org/fundraiser/ventilators-covid-19-icu-at-st-johns-natl-academy-of-health-sciences#/contributemodal"
+        label1: Donate
+        label2: Bangalore
+        name: Equip the COVID-19 ward at St. John.s NAHS 
+        text: "Raise funds to equip the newly opened COVID-19 ward at St. John’s NAHS with ventilators and medical supplies   "
+
+      - label1: Donate
+        label2: Mumbai
+        name: Project Mumbai  
+        text: "Working on multiple fronts: delivering meals to medical workers, police and government officials on the frontline; food and rations for daily wage workers and the homeless; city-wide medicine and grocery delivery services, etc. "
+
+      - label1: Donate 
+        label2: National
+        name: PharmEasy - Donate N95 Masks
+        text: "Provides N95 masks to health workers for every donation made (min. amount for donation is Rs 200). PharmEasy shall pledge one mask for every mask you donate. "
+
+      - label1: Donate 
+        label2: Delhi
+        name: Association of Surgeons of India (Delhi State Chapter)
+        text: "Seeking donations to equip medical workers on the frontline with PPE and N-95 masks
+        <pre>
+        Contacts:  <strong>Dr. Pawanindra Lal (+91 9968604380)</strong>\n
+        \t    <strong>Dr Tarun Mittal (+91 9811743877)</strong>\n
+        Account: Association of Surgeons of India DSC (Savings account)\n
+        Bank: Syndicate Bank; Sir Ganga Ram Hospital, New Delhi\n
+        Account No: 90682010022426\n
+        IFSC: SYNB0009111\n
+        </pre>"
+
+      - url: "https://www.ketto.org/fundraiser/Indiafordoctors19MTcxY?payment=form/"
+        label1: Donate 
+        label2: Delhi
+        name: Save our Saviors
+        text: "Providing Standard PPE Kits to government hospitals in Delhi treating the most number of active cases, at approx. Rs.1000 each."
+
+      - url: "https://covid19.ketto.org/fundraiser/help-dr-Harshawardhan-Tanwar-to-raise-funds-for-covid-19-relief?utm_source=internal&amp;utm_medium=whatsappShare&amp;utm_campaign=help-dr-Harshawardhan-Tanwar-to-raise-funds-for-covid-19-relief&amp;utm_content=84e939a2e4a2e53dde8900f78ff235bd&amp;shby=1"
+        label1: Donate 
+        label2: Mumbai
+        name: "War against Covid19: Fundraiser to protect the frontline health care workers"
+        text: "This fundraiser aims to raise funds to purchase PPE kits and other materials through a transparent channel of expert committee members. Goal - Rs 1,00,00,000"
+
+      - url: "https://covid19.ketto.org/fundraiser/10000-face-shields-for-covid19-in-india?utm_source=internal&amp;utm_medium=whatsappShare&amp;utm_campaign=10000-face-shields-for-covid19-in-india&amp;utm_content=84e939a2e4a2e53dde8900f78ff235bd&amp;shby=1"
+        label1: Donate
+        label2: Mumbai
+        name: Solution Shields for Covid19 by Maker’s Asylum Foundation 
+        text: "Fundraiser to raise funds to provide 10,000 face shields to hospitals and doctors that they have designed themselves at their Asylum. "
+
+      - label1: Donate
+        label2: J&amp;K
+        name: Noble Hands- Fighting coronavirus
+        text: "A group of friends in Jammu &amp; Kashmir in collaboration with Bunyaad Foundation has taken the initiative to provide PPEs, triple-layered masks, and 6 testing kits to doctors, paramedics, nurses, etc in Jammu &amp; Kashmir."
+  - heading: VOLUNTEER 
+    cards:
+      - url: "https://docs.google.com/forms/d/e/1FAIpQLSf-5OzGW-6K1yhwDX4BV1FBGOakcrEIcMNVSQ4sFr3iwH26aQ/viewform"
+        label1: Volunteer
+        label2: National
+        name: Mental Health Services
+        text: "Raising funds for Delhi’s waste pickers. Proceeds will go to providing them with masks and sanitiser, and also basic income support for those who cannot go out to work "
+
+      - url: "https://www.thebetterindia.com/221084/coronavirus-india-mumbai-man-deliver-groceries-medics-home-quarantine-elderly/"
+        label1: Volunteer
+        label2: Mumbai
+        name: Project Mumbai
+        text: "Looking for volunteers to help with their efforts in Mumbai. Volunteers would transport essentials like medicines and food to senior citizens in isolation, and to individuals under mandatory self-quarantine. The services will be contact-free, and masks will be provided. Contact:  shishir@projectmumbai.org ; volunteer@projectmumbai.org "
+  - heading: PURCHASE MEDICAL SUPPLIES 
+    cards:
+      - label1: Supplies
+        label2: National
+        name: Zilingo
+        text: "is focussing its B2B Supply Chain on the efforts to tackle the global shortage of PPE. They aim to assure fair pricing and trustworthy quality across their network and are ensuring all products and factories are verified before shipping. Email them at ppe@zilingo.com or Whatsapp on +6586095881"
+
+      - label1: Supplies
+        label2: Delhi
+        name: iVillage
+        text: "has masks available, they are currently available at their office in Ghitorni, MG road, New Delhi. Contact them at info@ivillagefamily.in or 011 6557 1800"
+permalink: /medical-relief
+---
+
+<p style="padding-bottom: 5px;border-bottom: 1px solid #e8e8e8;margin-right:0;">
+Below is a list of initiatives for COVID medical relief. We are still working 
+on search filters, so pls scroll through or use Ctrl + F to find what you’re 
+looking for.
+</p>
+
+{% for group in page.card-groups %}
+  {% if group.heading %}
+    {% include card_heading.html heading=group.heading %}
+  {% endif %}
+
+  {% for card in group.cards %}
+    {% include card.html
+     name=card.name
+     url=card.url
+     text=card.text
+     label1=card.label1
+     label2=card.label2
+    %}
+  {% endfor %}
+{% endfor %}
+
+
+Did we miss any? Write to us at tanvib@stanford.edu and we’ll add it here
+

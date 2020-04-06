@@ -1,0 +1,7 @@
+{% if include.item.rel-link %}
+<a class="page-link" href="{{ site.baseurl }}{{ include.item.rel-link }}">{{ include.item.name | escape }}</a>
+{% elsif include.item.link %}
+<a class="page-link" href="{{ include.item.link }}">{{ include.item.name | escape }}</a>
+{% else %}
+<a class="page-link">{{ include.item.name | escape }}</a>
+{% endif %}

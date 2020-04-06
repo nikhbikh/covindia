@@ -105,13 +105,15 @@
     position: absolute;
     background-color: rgb(62, 125, 152);
     text-color: white;
-    min-width: 160px;
-    text-align: center;
+    text-align: left;
 
     .page-link {
       color: white;
-      display: block;
+      display: inline-block;
       margin-right: 0;
+      padding-left: 12px;
+      padding-right: 12px;
+      min-width: max-content;
       padding-top: 8px;
       padding-bottom: 8px;
     }
