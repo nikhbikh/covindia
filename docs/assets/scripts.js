@@ -33,8 +33,11 @@ function card(item) {
 <div class="body">
 <h1>${ item.name }</h1>
 <p>${ item.text }</p>
-</div>
-</a>
-</div>`;
+`
+
+  if (item.thumbnail) {
+    html +=  `<img src="${ item.thumbnail }" scale="0" />`
+  }
+  html += `</div></a></div>`;
   return html;
 }

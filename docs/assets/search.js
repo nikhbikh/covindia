@@ -61,7 +61,8 @@ Search.prototype.init = function() {
 Search.prototype.index = function() {
   var that = this;
   this.idx = lunr(function () {
-    this.ref('url');
+    this.ref('id');
+    this.field('url');
     this.field('name', { boost: 10 });
     this.field('label1');
     this.field('label2');
@@ -70,7 +71,7 @@ Search.prototype.index = function() {
     // Add the data to lunr
     for (var i = 0; i < that.content.length; i++) {
       this.add(that.content[i]);
-      that.items[that.content[i].url] = that.content[i];
+      that.items[that.content[i].id] = that.content[i];
     }
   });
 }

@@ -2,13 +2,17 @@
 layout: null
 ---
 {% assign objs = "" | split: "," %}
+{% assign count = 0 %}
 {%- for page in site.pages -%}
   {%- if page.card-groups -%}
     {%- for group in page.card-groups -%}
       {%- for card in group.cards -%}
+      {% assign count = count | plus: 1 %}
         {%- capture obj -%}
 {
+  "id": {{ count }},
   "url": {{ card.url | jsonify }},
+  "thumbnail": {{ card.thumbnail| jsonify }},
   "name": {{ card.name | jsonify }},
   "label1": {{ card.label1 | jsonify }},
   "label2": {{ card.label2 | jsonify }},

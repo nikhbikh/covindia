@@ -1,0 +1,93 @@
+---
+layout: page
+title: Corona Awareness
+card-groups:
+  - heading: FAQs
+    cards:
+      - url: "https://www.mohfw.gov.in/pdf/Poster1GHFandDH.pdf"
+        label1: Poster
+        label2: English
+        name: What is novel coronavirus and how does it spread?
+        thumbnail: "https://indiacovidrelief.files.wordpress.com/2020/04/poster1ghfanddh-page-001.jpg"
+      - url: "https://www.mohfw.gov.in/pdf/FINAL_14_03_2020_ENg.pdf"
+        label1: Poster
+        label2: English
+        name: When should I get tested?
+        thumbnail: "https://indiacovidrelief.files.wordpress.com/2020/04/final_14_03_2020_eng-page-001.jpg"
+      - url: "https://www.who.int/images/default-source/health-topics/coronavirus/social-media-squares/be-smart-if-you-develop.jpg"
+        label1: Poster
+        label2: English
+        name: When should I get tested?
+        thumbnail: "https://www.who.int/images/default-source/health-topics/coronavirus/social-media-squares/be-smart-if-you-develop.jpg"
+      - url: "https://www.mohfw.gov.in/pdf/FINAL_14_03_2020_Hindi.pdf"
+        label1: Poster
+        label2: Hindi
+        name: When should I get tested?
+        thumbnail: "https://indiacovidrelief.files.wordpress.com/2020/04/final_14_03_2020_hindi-page-001.jpg"
+      - url: "https://www.mohfw.gov.in/pdf/ProtectivemeasuresHin.pdf"
+        label1: Poster
+        label2: Hindi
+        name: What can I do to prevent the spread of Corona?
+        thumbnail: "https://indiacovidrelief.files.wordpress.com/2020/04/protectivemeasureshin-page-001.jpg"
+      - url: "https://www.mohfw.gov.in/pdf/Poster4GHFGA.pdf"
+        label1: Poster
+        label2: English
+        name: When and how can I use a mask?
+        thumbnail: "https://indiacovidrelief.files.wordpress.com/2020/04/poster4ghfga-page-001.jpg"
+      - url: "https://www.mohfw.gov.in/pdf/Poster3GHFGA.pdf"
+        label1: Poster
+        label2: English
+        name: How do I use hand sanitizer / wash my hands?
+        thumbnail: "https://indiacovidrelief.files.wordpress.com/2020/04/poster3ghfga-page-001.jpg"
+      - url: "https://www.mohfw.gov.in/pdf/socialdistancingEnglish.pdf"
+        label1: Poster
+        label2: English
+        name: What is social distancing?
+        thumbnail: "https://indiacovidrelief.files.wordpress.com/2020/04/socialdistancingenglish-page-001.jpg"
+      - url: "https://www.mohfw.gov.in/pdf/socialdistancingHindi.pdf"
+        label1: Poster
+        label2: English
+        name: Whiat is social distancing?
+        thumbnail: "https://indiacovidrelief.files.wordpress.com/2020/04/socialdistancinghindi-page-001.jpg"
+      - url: "https://who.int/images/default-source/health-topics/coronavirus/social-media-squares/be-kind-to-support.jpg"
+        label1: Poster
+        label2: English
+        name: What can I do to support others?
+        thumbnail: "https://who.int/images/default-source/health-topics/coronavirus/social-media-squares/be-kind-to-support.jpg"
+      - url: "https://drive.google.com/file/d/1Pq6FzutccmgSpzilKdhGXK5-lvzNpI1l/view?usp=sharing"
+        label1: Poster Series
+        label2: Hindi
+        name: Common Myths
+        thumbnail: "https://indiacovidrelief.files.wordpress.com/2020/04/hindi_mygov_covid19_myth-busters-page-010-e1586159927311.jpg"
+permalink: /corona-awareness
+---
+
+<p style="padding-bottom: 5px;border-bottom: 1px solid #e8e8e8;margin-right:0;">
+Hello – please bear with us as we work on this content. In the meantime here’s some resources to get you started:
+</p>
+
+{% for group in page.card-groups %}
+  {% if group.heading %}
+    {% include card_heading.html heading=group.heading %}
+  {% endif %}
+
+  {% for card in group.cards %}
+    {% include card.html
+     name=card.name
+     url=card.url
+     text=card.text
+     label1=card.label1
+     label2=card.label2
+     thumbnail=card.thumbnail
+    %}
+  {% endfor %}
+{% endfor %}
+
+
+<h3 id="resources-by-organization">Resources by Organization</h3>
+<p><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">WHO</a></p>
+
+<p><a href="https://www.mohfw.gov.in/">Ministry of Health &amp; Family Welfare</a>,GoI</p>
+
+<p>Did we miss anything? Write to tanvib@stanford.edu and we’ll add it</p>
+
