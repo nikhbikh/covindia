@@ -13,3 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+function card(item) {
+  html = '<div class="card">'
+  if (item.url) {
+    html += `<a  href="${ item.url }">`
+  } else {
+    html += '<a>'
+  }
+  html += '<div class="label">'
+  if (item.label1) {
+    html += `<span>${ item.label1 }</span>`
+    if (item.label2) {
+      html += `<span>${ item.label2 }</span>`
+    }
+  }
+  html += `
+</div>
+<div class="body">
+<h1>${ item.name }</h1>
+<p>${ item.text }</p>
+</div>
+</a>
+</div>`;
+  return html;
+}

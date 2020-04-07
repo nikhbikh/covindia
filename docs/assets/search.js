@@ -1,3 +1,5 @@
+---
+---
 /**
  * Search
  */
@@ -35,11 +37,13 @@ Search.prototype.init = function() {
       // We attach search to the changes of input
       that.el.addEventListener('keyup', function () {
         if (this.value) {
+          console.log(`searching ${this.value}...`);
           that.search(this.value);
+          console.log(`displaying ${this.value}...`);
           that.display();
         }
         else {
-          this.resultsEl.innerHTML = '<p class="default">Type in keywords</p>';
+          hideResults();
         }
       });
     }
@@ -74,25 +78,19 @@ Search.prototype.index = function() {
 // Display results
 Search.prototype.display = function() {
   if (this.results.length) {
-    document.querySelector('.page-content').style.display = "none";
-    document.querySelector('.search-results').style.display = "block";
+    showResults();
 
-    var output = '<ul>';
+    var output = '<div class="wrapper"><br/>';
     for (var i = 0; i < this.results.length; i++) {
       var item = this.items[this.results[i].ref];
-      output += '<li>';
-      output += '  <a href="' + item.url + '">';
-      output += '    <h3>' + item.name + '</h3>';
-      output += '    <p>' + item.text.substring(0, 120) + '...</p>';
-      output += '  </a>';
-      output += '</li>';
+      output += card(item)
     }
-    output += '</ul>';
+    output += '</div>';
     this.resultsEl.innerHTML = output;
   }
   else {
-    document.querySelector('.page-content').style.display = null;
-    document.querySelector('.search-results').style.display = "none";
+    showResults();
+    console.log('no results found');
     this.resultsEl.innerHTML = '<p class="empty">No results found</p></li>';
   }
 }
@@ -100,4 +98,20 @@ Search.prototype.display = function() {
 // Run the search with Lunr.js
 Search.prototype.search = function(keywords) {
   this.results = this.idx.search(keywords);
+}
+
+function showResults() {
+  contents = document.querySelector('.page-content')
+  contents.style.display = "none";
+
+  results = document.querySelector('.search-results')
+  results.style.display = "block";
+}
+
+function hideResults() {
+  contents = document.querySelector('.page-content')
+  contents.style.display = "block";
+
+  results = document.querySelector('.search-results');
+  results.style.display = "none";
 }
