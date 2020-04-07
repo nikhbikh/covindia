@@ -1,0 +1,25 @@
+---
+layout: null
+---
+{% assign objs = "" | split: "," %}
+{%- for page in site.pages -%}
+  {%- if page.card-groups -%}
+    {%- for group in page.card-groups -%}
+      {%- for card in group.cards -%}
+        {%- capture obj -%}
+{
+  "url": {{ card.url | jsonify }},
+  "name": {{ card.name | jsonify }},
+  "label1": {{ card.label1 | jsonify }},
+  "label2": {{ card.label2 | jsonify }},
+  "text": {{ card.text | markdownify | strip_html | strip_newlines | jsonify }}
+}
+        {%- endcapture -%}
+        {% assign objs = objs | push: obj %}
+      {%- endfor -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
+
+[{{ objs | join: ",
+"}}]
